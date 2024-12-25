@@ -1,7 +1,13 @@
 function criarBarra(var_nome, var_avatar) {
-  // Criação do elemento de barra de usuário
+  // a2 Criação do elemento de barra de usuário
   var userBar = document.createElement("div");
   userBar.className = "user-bar";
+  userBar.style.position = "absolute";  // Certificando que a barra fique fixada no topo
+  userBar.style.top = "0";
+  userBar.style.left = "0";
+  userBar.style.width = "100%";
+  userBar.style.zIndex = "9999"; // Garantir que a barra fique no topo
+  userBar.style.backgroundColor = "#fff"; // Definindo fundo branco (ajustar conforme necessário)
 
   // Criação do botão de voltar (opcional)
   var backButton = document.createElement("div");
@@ -13,7 +19,7 @@ function criarBarra(var_nome, var_avatar) {
   // Criação do avatar
   var avatar = document.createElement("div");
   avatar.className = "avatar";
-  avatar.innerHTML = '<img src="' + var_avatar + '" alt="Avatar">';
+  avatar.innerHTML = '<img src="' + var_avatar + '" alt="Avatar" style="width: 30px; height: 30px; border-radius: 50%;">';
 
   // Criação do nome
   var name = document.createElement("div");
