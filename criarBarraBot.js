@@ -7,7 +7,7 @@ function criarBarra(var_nome, var_avatar) {
   userBar.style.left = "0";
   userBar.style.width = "100%";
   userBar.style.zIndex = "9999"; // Garantir que a barra fique no topo
-  userBar.style.backgroundColor = "#fff"; // Definindo fundo branco (ajustar conforme necessário)
+  userBar.style.backgroundColor = "red"; // Definindo fundo branco (ajustar conforme necessário)
 
   // Criação do botão de voltar (opcional)
   var backButton = document.createElement("div");
@@ -28,8 +28,8 @@ function criarBarra(var_nome, var_avatar) {
 
   // Criação do status (digitando...)
   var varStatus = document.createElement("span");
-  varStatus.className = "status";
-  varStatus.innerText = "digitando...";
+  varStatus.className = "statsasus";
+  varStatus.innerText = "digiaaaatando...";
 
   // Adiciona o status ao nome
   name.appendChild(varStatus);
@@ -54,9 +54,9 @@ function criarBarra(var_nome, var_avatar) {
     const isTyping = botBody.querySelector('.bubble1');
     
     if (isTyping) {
-      varStatus.innerText = 'digitando...'; // Exibe "digitando..."
+      varStatus.innerText = 'digitsasasando...'; // Exibe "digitando..."
     } else {
-      varStatus.innerText = 'Online'; // Exibe "Online" quando não estiver digitando
+      varStatus.innerText = 'Onsaline'; // Exibe "Online" quando não estiver digitando
     }
   }, 400);
 }
