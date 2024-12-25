@@ -9,7 +9,7 @@ function criarBarra(var_nome, var_avatar) {
   userBar.style.width = "100%";  // A largura pode ser ajustada, como 80% ou outro valor
   userBar.style.height = "50px"; // Ajuste a altura da barra
   userBar.style.zIndex = "9999"; // Garantir que a barra fique no topo
-  userBar.style.backgroundColor = "red"; // Definindo fundo branco (ajustar conforme necessário)
+  userBar.style.backgroundColor = "green"; // Definindo fundo branco (ajustar conforme necessário)
   userBar.style.display = "flex"; // Usando flexbox para alinhar os itens
   userBar.style.alignItems = "center"; // Alinha os itens verticalmente
   userBar.style.padding = "0 10px"; // Adiciona um pouco de espaçamento lateral
