@@ -6,10 +6,10 @@ function criarBarra(var_nome, var_avatar) {
   userBar.style.position = "absolute";  // Certificando que a barra fique fixada no topo
   userBar.style.top = "0";
   userBar.style.left = "0";
-  userBar.style.width = "100%";  // A largura pode ser ajustada, como 80% ou outro valor
+  userBar.style.width = "40%";  // A largura pode ser ajustada, como 80% ou outro valor
   userBar.style.height = "50px"; // Ajuste a altura da barra
   userBar.style.zIndex = "9999"; // Garantir que a barra fique no topo
-  userBar.style.backgroundColor = "blue"; // Definindo fundo branco (ajustar conforme necessário)
+  userBar.style.backgroundColor = "rgba(255, 255, 255, 0.7)";
   userBar.style.display = "flex"; // Usando flexbox para alinhar os itens
   userBar.style.alignItems = "center"; // Alinha os itens verticalmente
   userBar.style.padding = "0 10px"; // Adiciona um pouco de espaçamento lateral
@@ -31,12 +31,13 @@ function criarBarra(var_nome, var_avatar) {
   // Criação do nome
   var name = document.createElement("div");
   name.className = "name";
-  name.innerHTML = '<span>' + var_nome + '</span>';
+ // name.innerHTML = '<span>' + var_nome + '</span>';
+ name.innerHTML = '<span>⚫  </span>';
 
   // Criação do status (digitando...)
   var varStatus = document.createElement("span");
-  varStatus.className = "status";
-  varStatus.innerText = "digitando...";
+  varStatus.className = "Status";
+  varStatus.innerText = "Digitando...";
   varStatus.style.fontSize = "14px"; // Ajusta o tamanho da fonte do status
 
   // Adiciona o status ao nome
@@ -60,7 +61,7 @@ function criarBarra(var_nome, var_avatar) {
   setInterval(() => {
     const isTyping = botBody.querySelector('.bubble1');
     if (isTyping) {
-      varStatus.innerText = 'digitando...'; // Exibe "digitando..."
+      varStatus.innerText = 'Digitando...'; // Exibe "digitando..."
     } else {
       varStatus.innerText = 'Online'; // Exibe "Online" quando não estiver digitando
     }
