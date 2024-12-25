@@ -1,5 +1,4 @@
 function criarBarra(var_nome, var_avatar) {
-
   // Criação do elemento de barra de usuário
   var userBar = document.createElement("div");
   userBar.className = "user-bar";
@@ -9,7 +8,7 @@ function criarBarra(var_nome, var_avatar) {
   userBar.style.width = "100%";  // A largura pode ser ajustada, como 80% ou outro valor
   userBar.style.height = "50px"; // Ajuste a altura da barra
   userBar.style.zIndex = "9999"; // Garantir que a barra fique no topo
-  userBar.style.backgroundColor = "red"; // Definindo fundo branco (ajustar conforme necessário)
+  userBar.style.backgroundColor = "green"; // Definindo fundo vermelho (ajustar conforme necessário)
   userBar.style.display = "flex"; // Usando flexbox para alinhar os itens
   userBar.style.alignItems = "center"; // Alinha os itens verticalmente
   userBar.style.padding = "0 10px"; // Adiciona um pouco de espaçamento lateral
@@ -28,6 +27,12 @@ function criarBarra(var_nome, var_avatar) {
   avatar.innerHTML = '<img src="' + var_avatar + '" alt="Avatar" style="width: 30px; height: 30px; border-radius: 50%;">';
   avatar.style.marginRight = "10px"; // Espaço entre o avatar e o nome
 
+  // Criação do contêiner para nome e status
+  var nameStatusContainer = document.createElement("div");
+  nameStatusContainer.style.display = "flex";
+  nameStatusContainer.style.flexDirection = "column"; // Alinha o nome e o status verticalmente
+  nameStatusContainer.style.justifyContent = "center"; // Alinha o conteúdo no centro verticalmente
+
   // Criação do nome
   var name = document.createElement("div");
   name.className = "name";
@@ -39,13 +44,14 @@ function criarBarra(var_nome, var_avatar) {
   varStatus.innerText = "digitando...";
   varStatus.style.fontSize = "14px"; // Ajusta o tamanho da fonte do status
 
-  // Adiciona o status ao nome
-  name.appendChild(varStatus);
+  // Adiciona o nome e o status ao contêiner
+  nameStatusContainer.appendChild(name);
+  nameStatusContainer.appendChild(varStatus);
 
   // Montar a barra com os elementos criados
   userBar.appendChild(backButton);
   userBar.appendChild(avatar);
-  userBar.appendChild(name);
+  userBar.appendChild(nameStatusContainer);
 
   // Seleciona o elemento pai dentro do shadow DOM do Typebot
   var elementoPai = document.getElementsByTagName("typebot-standard")[0].shadowRoot.querySelector('.typebot-container');
